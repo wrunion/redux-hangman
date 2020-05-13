@@ -5,34 +5,42 @@ class LetterControl extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      wordToGuess: 'BANANA',
-      wordToGuessArray: ['B','A','N','A'],
+      targetWord: 'BANANA',
+      targetWordArray: ['B','A','N','A'],
       lettersGuessed: [],
-      // lettersGuessedCorrect: [],
       numberOfWrongGuesses: 0,
       numberOfCorrectGuesses: 0,
       win: false,
       // lose: false,
-      currentGuess: ''
+      // currentGuess: ''
     }
   }
 
   checkWinCondition = () => {
-    if (this.state.numberOfCorrectGuesses === this.state.wordToGuessArray.length) {
+    if (this.state.numberOfCorrectGuesses === this.state.targetWordArray.length) {
       this.setState({win: true});
     }
   }
 
   handleLetterInput = (letter) => {
-    this.setState({currentGuess: letter});
-    console.log(letter);
+    console.log(letter); //This is the letter the user inputted
+
+  const { targetWordArray } = this.state;    
+
+    const isLetterInWord = targetWordArray.find(e =>  e === letter);
+    if (isLetterInWord === undefined) {
+      //do stuff for wrong guess
+    } else {
+      //do stuff for correct guess here
+    }
   }
 
   render() {
     return (
-      <Form formSubmissionHandler={this.handleLetterInput} />
-    
-    )
+      <div>
+        <Form handleSubmit={this.handleLetterInput} />
+      </div>
+    );
   }
 }
 
