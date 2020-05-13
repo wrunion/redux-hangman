@@ -28,17 +28,17 @@ class LetterControl extends Component {
     }
   }
 
-  handleEditingTicketInList = (letter) => {
-    const { dispatch } = this.props;
-    const action = this.inputtedLetter(letter);
-    dispatch(action);
-  }
+  // handleEditingTicketInList = (letter) => {
+  //   const { dispatch } = this.props;
+  //   const action = this.inputtedLetter(letter);
+  //   dispatch(action);
+  // }
 
 
 
   handleLetterInput = (letter) => {
     console.log(letter); //This is the letter the user inputted
-    this.props.dispatch(letterReducer(letter));
+    this.props.dispatch(letterAction(letter));
     // console.log(store.getState());
     // store.subscribe(() =>
     //   console.log(store.getState())
@@ -62,6 +62,7 @@ class LetterControl extends Component {
   }
 
   render() {
+    console.log(this.props.state)
     return (
       <div>
         <Form handleSubmit={this.handleLetterInput} />

@@ -4,7 +4,7 @@ import './index.css';
 import App from './components/App';
 import { createStore } from 'redux';
 // import reducers from './reducers';
-import letterReducer from './reducers/TestActionsAndReducers';
+import letterReducer from './reducers';
 import { Provider } from 'react-redux';
 
 // store.subscribe(() =>

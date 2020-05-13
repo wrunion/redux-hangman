@@ -6,15 +6,16 @@
 // const initState = {
 //   lettersGuessedArray: []
 // }
-export default function letterReducer(state = {letterArray:[]}, action) {
-  if (!state) {
-    return null;
-  }
+export default (state = {letterArray:[]}, action) => {
+  // if (!state) {
+  //   return null;
+  // }
   if (action.type === 'ADD_LETTER') {
     return {
-      ...state,
       letterArray: [...state.letterArray, action.letter]
     }
+  } else {
+    return state;
   }
 }
 
