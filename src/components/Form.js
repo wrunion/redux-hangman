@@ -6,23 +6,24 @@ function Form(props) {
   function formSubmissionHandler(event) {
     event.preventDefault();
     const letter = event.target.letter.value;
-    // console.log(letter);
     props.handleSubmit(letter.toUpperCase());
   }
 
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
-        <p><textarea
+        <p><input type="text" 
           id='letter'
           placeholder='Submit a Letter'
+          maxlength="1"
+          required
         /></p>
         <button type='submit'>Submit A letter</button>
       </form>
     </React.Fragment>
   );
 }
-//i dont think we needs this cuz its not a prop type anymore?
+
 Form.propTypes = {
   handleSubmit: PropTypes.func,
 };

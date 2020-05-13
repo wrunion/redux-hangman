@@ -30,8 +30,14 @@ class LetterControl extends Component {
     const isLetterInWord = targetWordArray.find(e =>  e === letter);
     if (isLetterInWord === undefined) {
       console.log("no")
+      //incorrect guess
+      //add letter to "guessed" array; 
+      //add one to incorrect guesses
     } else {
       console.log("yes")
+      //correct guess
+      //add letter to "guessed array"
+      //add one to correct guesses
     }
   }
 
@@ -39,6 +45,7 @@ class LetterControl extends Component {
     return (
       <div>
         <Form handleSubmit={this.handleLetterInput} />
+        {/* <Letter letter="b"/> */}
       </div>
     );
   }
