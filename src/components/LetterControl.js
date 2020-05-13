@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import Form from './Form';
+import { connect } from 'react-redux';
+import { inputtedLetter } from '../actions';
+// import PropTypes from "prop-types";
+// import * as a from './../actions';
 
 class LetterControl extends Component {
   constructor(props) {
@@ -7,7 +11,7 @@ class LetterControl extends Component {
     this.state = {
       targetWord: 'BANANA',
       targetWordArray: ['B','A','N','A'],
-      lettersGuessedArray: [],
+      // lettersGuessedArray: [] //REPLACED BY REDUX STATE
       numberOfWrongGuesses: 0,
       numberOfCorrectGuesses: 0,
       win: false,
@@ -21,6 +25,14 @@ class LetterControl extends Component {
       this.setState({win: true});
     }
   }
+
+  handleEditingTicketInList = (letter) => {
+    const { dispatch } = this.props;
+    const action = this.inputtedLetter(letter);
+    dispatch(action);
+  }
+
+
 
   handleLetterInput = (letter) => {
     console.log(letter); //This is the letter the user inputted
@@ -47,10 +59,24 @@ class LetterControl extends Component {
     return (
       <div>
         <Form handleSubmit={this.handleLetterInput} />
-        <div id="lettersGuessed">{this.state.lettersGuessedArray}</div>
+        <div id="lettersGuessed">{this.props.lettersGuessedArray}</div>
       </div>
     );
   }
 }
 
-export default LetterControl;
+const mapStateToProps = state => {
+  return {
+    lettersGuessedArray: state.lettersGuessedArray
+  }
+}
+
+// this.props.lettersGuessedArray(letter);
+
+// LetterControl = connect(LetterControl)
+// export default LetterControl;
+
+// alt way
+export default connect(mapStateToProps,  {
+  addLetterToArray: inputtedLetter
+})(LetterControl);
