@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Form from './Form';
 import { connect } from 'react-redux';
-import { inputtedLetter } from '../actions';
+// import { inputtedLetter } from '../actions';
+import { guessedLetterArrayReducer } from '../reducers';
+import { store } from '../index.js';
 // import PropTypes from "prop-types";
 // import * as a from './../actions';
 
@@ -37,7 +39,10 @@ class LetterControl extends Component {
   handleLetterInput = (letter) => {
     console.log(letter); //This is the letter the user inputted
     this.props.addLetterToArray(letter);
-
+    console.log(store.getState());
+    // store.subscribe(() =>
+    //   console.log(store.getState())
+    // );
     // const { targetWordArray } = this.state;    
 
     // const isLetterInWord = targetWordArray.find(e =>  e === letter);
@@ -72,12 +77,6 @@ const mapStateToProps = state => {
   }
 }
 
-// this.props.lettersGuessedArray(letter);
-
-// LetterControl = connect(LetterControl)
-// export default LetterControl;
-
-// alt way
 export default connect(mapStateToProps,  {
-  addLetterToArray: inputtedLetter
+  addLetterToArray: guessedLetterArrayReducer
 })(LetterControl);
