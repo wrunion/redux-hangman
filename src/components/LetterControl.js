@@ -27,42 +27,13 @@ class LetterControl extends Component {
       this.setState({win: true});
     }
   }
-
-  // handleEditingTicketInList = (letter) => {
-  //   const { dispatch } = this.props;
-  //   const action = this.inputtedLetter(letter);
-  //   dispatch(action);
-  // }
-
-
-
+  
   handleLetterInput = (letter) => {
-    console.log(letter); //This is the letter the user inputted
+    console.log(letter); 
     this.props.dispatch(letterAction(letter));
-    // console.log(store.getState());
-    // store.subscribe(() =>
-    //   console.log(store.getState())
-    // );
-    // const { targetWordArray } = this.state;    
-
-    // const isLetterInWord = targetWordArray.find(e =>  e === letter);
-    // // this.setState({lettersGuessedArray: [...this.state.lettersGuessedArray, letter]});
-
-    // if (isLetterInWord === undefined) {
-    //   console.log("no")
-    //   //incorrect guess
-    //   //add letter to "guessed" array; 
-    //   //add one to incorrect guesses
-    // } else {
-    //   console.log("yes")
-    //   //correct guess
-    //   //add letter to "guessed array"
-    //   //add one to correct guesses
-    // }
   }
 
   render() {
-    console.log(this.props.state)
     return (
       <div>
         <Form handleSubmit={this.handleLetterInput} />
@@ -72,17 +43,10 @@ class LetterControl extends Component {
   }
 }
 
-//lettersGuessedArray //state 
-
 const mapStateToProps = state => {
   return {
     letterArray: state.letterArray
   }
 }
-
-// export default connect(mapStateToProps,  {
-//   addLetterToArray: letterArrayReducer
-// })(LetterControl);
-
 
 export default connect(mapStateToProps)(LetterControl);

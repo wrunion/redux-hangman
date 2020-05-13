@@ -3,10 +3,11 @@
 // this.state = {
 //   lettersGuessedArray: [],
 // }
-// const initState = {
-//   lettersGuessedArray: []
-// }
-export default (state = {letterArray:[]}, action) => {
+const initState = {
+  letterArray: []
+}
+
+export default (state = initState, action) => {
   // if (!state) {
   //   return null;
   // }
