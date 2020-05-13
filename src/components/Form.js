@@ -15,7 +15,7 @@ function Form(props) {
         <p><input type="text" 
           id='letter'
           placeholder='Submit a Letter'
-          maxlength="1"
+          maxLength="1"
           required
         /></p>
         <button type='submit'>Submit A letter</button>

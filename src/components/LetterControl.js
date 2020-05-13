@@ -36,23 +36,24 @@ class LetterControl extends Component {
 
   handleLetterInput = (letter) => {
     console.log(letter); //This is the letter the user inputted
+    this.props.addLetterToArray(letter);
 
-  const { targetWordArray } = this.state;    
+    // const { targetWordArray } = this.state;    
 
-    const isLetterInWord = targetWordArray.find(e =>  e === letter);
-    this.setState({lettersGuessedArray: [...this.state.lettersGuessedArray, letter]});
+    // const isLetterInWord = targetWordArray.find(e =>  e === letter);
+    // // this.setState({lettersGuessedArray: [...this.state.lettersGuessedArray, letter]});
 
-    if (isLetterInWord === undefined) {
-      console.log("no")
-      //incorrect guess
-      //add letter to "guessed" array; 
-      //add one to incorrect guesses
-    } else {
-      console.log("yes")
-      //correct guess
-      //add letter to "guessed array"
-      //add one to correct guesses
-    }
+    // if (isLetterInWord === undefined) {
+    //   console.log("no")
+    //   //incorrect guess
+    //   //add letter to "guessed" array; 
+    //   //add one to incorrect guesses
+    // } else {
+    //   console.log("yes")
+    //   //correct guess
+    //   //add letter to "guessed array"
+    //   //add one to correct guesses
+    // }
   }
 
   render() {
