@@ -1,8 +1,8 @@
 /* Action creator */ 
-export const inputtedLetter = (letter) => {
+export const letterAction = (letter) => {
   /* Return a single letter */
   return {
-    type: 'INPUT_LETTER',
-    payload: letter
+    type: 'ADD_LETTER',
+    letter: letter
   };
 };

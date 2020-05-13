@@ -4,7 +4,7 @@ import './index.css';
 import App from './components/App';
 import { createStore } from 'redux';
 // import reducers from './reducers';
-import reducer from './reducers/TestActionsAndReducers';
+import letterReducer from './reducers/TestActionsAndReducers';
 import { Provider } from 'react-redux';
 
 // store.subscribe(() =>
@@ -15,7 +15,17 @@ import { Provider } from 'react-redux';
 //   letterArray: []
 // }
 
-export const store = createStore(reducer);
+export const store = createStore(letterReducer);
+
+// store.dispatch({type: 'ADD_LETTER', letter: 'A'});
+// store.dispatch({type: 'ADD_LETTER', letter: 'B'});
+// store.dispatch({type: 'ADD_LETTER', letter: 'C'});
+// store.dispatch({type: 'ADD_LETTER', letter: 'D'});
+
+// store.subscribe(() => {
+//   console.log('state updated');
+//   console.log(store.getState());
+// })
 
 ReactDOM.render(
   <Provider store={store}>

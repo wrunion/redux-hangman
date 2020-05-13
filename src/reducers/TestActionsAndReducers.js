@@ -1,12 +1,13 @@
-import { createStore } from 'redux';
-const store = createStore(reducer);
-// import { store } from '../index.js';
+// import { createStore } from 'redux';
+// const store = createStore(reducer);
+import { store } from '../index.js';
+// import action from 'actions'
 
 // const initState = {
 //   letterArray: []
 // }
 
-export default function reducer(state = {letterArray:[]}, action) {
+export default function letterReducer(state = {letterArray:[]}, action) {
   if (!state) {
     return null;
   }
@@ -18,13 +19,3 @@ export default function reducer(state = {letterArray:[]}, action) {
   }
 }
 
-store.dispatch({type: 'ADD_LETTER', letter: 'A'});
-store.dispatch({type: 'ADD_LETTER', letter: 'B'});
-store.dispatch({type: 'ADD_LETTER', letter: 'C'});
-store.dispatch({type: 'ADD_LETTER', letter: 'D'});
-
-
-store.subscribe(() => {
-  console.log('state updated');
-  console.log(store.getState());
-})

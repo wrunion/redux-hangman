@@ -1,26 +1,37 @@
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
 
 // this.state = {
 //   lettersGuessedArray: [],
 // }
-const initState = {
-  lettersGuessedArray: []
-}
-
-
-export const guessedLetterArrayReducer = (state=initState, action) => {
+// const initState = {
+//   lettersGuessedArray: []
+// }
+export default function letterReducer(state = {letterArray:[]}, action) {
   if (!state) {
     return null;
   }
-  switch (action.type) {
-    case 'INPUT_LETTER':
-      const updatedState = {lettersGuessedArray: [...this.state.lettersGuessedArray, action.payload]};
-      return updatedState; 
-      // return {lettersGuessedArray: [...this.state.lettersGuessedArray, action.payload]};
-    default: 
-      return state;  
-  };
-};
+  if (action.type === 'ADD_LETTER') {
+    return {
+      ...state,
+      letterArray: [...state.letterArray, action.letter]
+    }
+  }
+}
+
+
+// export const letterArrayReducer = (state={ lettersGuessedArray: [] }, action) => {
+//   // if (!state) {
+//   //   return null;
+//   // }
+//   switch (action.type) {
+//     case 'ADD_LETTER':
+//       const updatedState = {lettersGuessedArray: [...this.state.lettersGuessedArray, action.payload]};
+//       return updatedState; 
+//       // return {lettersGuessedArray: [...this.state.lettersGuessedArray, action.payload]};
+//     default: 
+//       return state;  
+//   };
+// };
 
 // case c.UPDATE_TIME:
 //   const newTicket = Object.assign({}, state[id],;
@@ -31,6 +42,6 @@ export const guessedLetterArrayReducer = (state=initState, action) => {
 // default:
 //   return state;
 
-export default combineReducers({
-  guessedLetterArray: guessedLetterArrayReducer,  
-});
+// export default combineReducers({
+//   guessedLetterArray: guessedLetterArrayReducer,  
+// });

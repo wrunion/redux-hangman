@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import Form from './Form';
 import { connect } from 'react-redux';
-// import { inputtedLetter } from '../actions';
-import { guessedLetterArrayReducer } from '../reducers';
-import { store } from '../index.js';
-// import PropTypes from "prop-types";
-// import * as a from './../actions';
+import letterReducer from '../reducers';
+//Do we need to do this??? I don't think we should
+// import { store } from '../index.js';
+import { letterAction } from '../actions';
+
 
 class LetterControl extends Component {
   constructor(props) {
@@ -38,8 +38,8 @@ class LetterControl extends Component {
 
   handleLetterInput = (letter) => {
     console.log(letter); //This is the letter the user inputted
-    this.props.addLetterToArray(letter);
-    console.log(store.getState());
+    this.props.dispatch(letterReducer(letter));
+    // console.log(store.getState());
     // store.subscribe(() =>
     //   console.log(store.getState())
     // );
@@ -65,18 +65,23 @@ class LetterControl extends Component {
     return (
       <div>
         <Form handleSubmit={this.handleLetterInput} />
-        <div id="lettersGuessed">{this.props.lettersGuessedArray}</div>
+        <div id="lettersGuessed">{this.props.letterArray}</div>
       </div>
     );
   }
 }
 
+//lettersGuessedArray //state 
+
 const mapStateToProps = state => {
   return {
-    lettersGuessedArray: state.lettersGuessedArray
+    letterArray: state.letterArray
   }
 }
 
-export default connect(mapStateToProps,  {
-  addLetterToArray: guessedLetterArrayReducer
-})(LetterControl);
+// export default connect(mapStateToProps,  {
+//   addLetterToArray: letterArrayReducer
+// })(LetterControl);
+
+
+export default connect(mapStateToProps)(LetterControl);
