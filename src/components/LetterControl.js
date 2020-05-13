@@ -27,10 +27,10 @@ class LetterControl extends Component {
       this.setState({win: true});
     }
   }
-  
+
   handleLetterInput = (letter) => {
     console.log(letter); 
-    this.props.dispatch(letterAction(letter));
+    this.props.letterAction(letter);
   }
 
   render() {
@@ -38,6 +38,7 @@ class LetterControl extends Component {
       <div>
         <Form handleSubmit={this.handleLetterInput} />
         <div id="lettersGuessed">{this.props.letterArray}</div>
+        {/* Create LetterDisplayDiv component  */}
       </div>
     );
   }
@@ -49,4 +50,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(LetterControl);
+export default connect(mapStateToProps, { letterAction })(LetterControl);
