@@ -7,7 +7,7 @@ class LetterControl extends Component {
     this.state = {
       targetWord: 'BANANA',
       targetWordArray: ['B','A','N','A'],
-      lettersGuessed: [],
+      lettersGuessedArray: [],
       numberOfWrongGuesses: 0,
       numberOfCorrectGuesses: 0,
       win: false,
@@ -28,6 +28,8 @@ class LetterControl extends Component {
   const { targetWordArray } = this.state;    
 
     const isLetterInWord = targetWordArray.find(e =>  e === letter);
+    this.setState({lettersGuessedArray: [...this.state.lettersGuessedArray, letter]});
+
     if (isLetterInWord === undefined) {
       console.log("no")
       //incorrect guess
@@ -45,7 +47,7 @@ class LetterControl extends Component {
     return (
       <div>
         <Form handleSubmit={this.handleLetterInput} />
-        {/* <Letter letter="b"/> */}
+        <div id="lettersGuessed">{this.state.lettersGuessedArray}</div>
       </div>
     );
   }
