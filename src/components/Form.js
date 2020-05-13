@@ -1,12 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Form(props) {
+
+function Form() {
+  function formSubmissionHandler(event) {
+    event.preventDefault();
+    const letter = event.target.letter.value;
+    console.log(letter);
+  }
+
   return (
     <React.Fragment>
-      <form onSubmit={props.formSubmissionHandler}>
+      <form onSubmit={formSubmissionHandler}>
         <p><textarea
-          name='letter'
+          id='letter'
           placeholder='Submit a Letter' /></p>
         <button type='submit'>Submit A letter</button>
       </form>

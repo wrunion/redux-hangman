@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Form from './Form';
 
 class LetterControl extends Component {
   constructor(props) {
@@ -24,13 +25,13 @@ class LetterControl extends Component {
 
   handleLetterInput = (letter) => {
     this.setState({currentGuess: letter});
+    console.log(letter);
   }
 
   render() {
     return (
-      <div className="LetterControl">
-        <h3>"You Win!" / "You lose!" goes here</h3>
-      </div>
+      <Form formSubmissionHandler={this.handleLetterInput} />
+    
     )
   }
 }
