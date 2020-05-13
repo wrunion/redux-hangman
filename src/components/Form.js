@@ -7,7 +7,7 @@ function Form(props) {
     event.preventDefault();
     const letter = event.target.letter.value;
     // console.log(letter);
-    props.handleSubmit(letter);
+    props.handleSubmit(letter.toUpperCase());
   }
 
   return (

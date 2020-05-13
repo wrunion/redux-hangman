@@ -29,9 +29,9 @@ class LetterControl extends Component {
 
     const isLetterInWord = targetWordArray.find(e =>  e === letter);
     if (isLetterInWord === undefined) {
-      //do stuff for wrong guess
+      console.log("no")
     } else {
-      //do stuff for correct guess here
+      console.log("yes")
     }
   }
 
