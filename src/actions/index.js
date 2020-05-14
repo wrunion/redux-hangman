@@ -1,4 +1,4 @@
-/* Action creator */ 
+/* Action creator */
 export const letterAction = (letter) => {
   /* Return a single letter */
   return {

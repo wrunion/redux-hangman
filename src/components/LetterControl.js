@@ -4,25 +4,32 @@ import { connect } from 'react-redux';
 import letterReducer from '../reducers';
 import { letterAction, checkLetter, checkWinCondition } from '../actions';
 import LetterDisplay from './LetterDisplay';
+import WordDisplay from './WordDisplay';
 import HangmanImage from './HangmanImage';
 
 class LetterControl extends Component {
 
   /* somewhere in here we need to verify that they're not submitting the same letter twice - or throw an error if they are */
   handleLetterInput = (letter) => {
-    const { letterAction, checkLetter, checkWinCondition } = this.props; 
+    const { letterAction, checkLetter, checkWinCondition } = this.props;
     letterAction(letter);
     checkLetter(letter);
     /* THIS DOESN'T WORK YET */
     checkWinCondition();
   }
 
+  // handleShowWord = () => {
+  //   console.log(this.props.targetWordArray)
+  // }
+
+
   render() {
     return (
       <div>
-        <HangmanImage number="3"/>
+        <HangmanImage number="3" />
         <Form handleSubmit={this.handleLetterInput} />
         <LetterDisplay letterArray={this.props.letterArray} />
+        <WordDisplay rightGuesseArray={this.props.rightGuesseArray} />
       </div>
     );
   }
@@ -34,7 +41,7 @@ const mapStateToProps = state => {
     targetWordArray: state.targetWordArray,
     targetWord: state.targetWord,
     numOfWrongGuesses: state.numOfWrongGuesses,
-    numOfRightGuesses: state.numOfRightGuesses, 
+    rightGuesseArray: state.rightGuesseArray,
     win: state.win,
     lose: state.lose
   }

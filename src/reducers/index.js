@@ -2,64 +2,65 @@
 
 const initState = {
   targetWord: 'BANANA',
-  targetWordArray: ['B','A','N','A'],
+  targetWordArray: ['B', 'A', 'N', 'A'],
   numOfWrongGuesses: 0,
-  numOfRightGuesses: 0,
+  rightGuesseArray: [],
   letterArray: [],
   win: false,
   lose: false
 }
 
 export default (state = initState, action) => {
-    switch (action.type) {
-      case 'ADD_LETTER':
+  switch (action.type) {
+    case 'ADD_LETTER':
+      return {
+        ...state,
+        letterArray: [...state.letterArray, action.letter]
+      }
+    case 'CHECK_LETTER':
+      /* Check if letter is in target word */
+      const isLetterInWord = state.targetWord.includes(action.letter);
+
+      if (isLetterInWord) {
         return {
           ...state,
-          letterArray: [...state.letterArray, action.letter]
+          rightGuesseArray: [...state.rightGuesseArray, action.letter]
         }
-      case 'CHECK_LETTER':
-        /* Check if letter is in target word */
-        const isLetterInWord = state.targetWord.includes(action.letter);
-        
-        if (isLetterInWord) {
-          return {
-            ...state,
-            numOfRightGuesses: state.numOfRightGuesses += 1,
-          } 
-        } else {
-            return {
-              ...state,
-              numOfWrongGuesses: state.numOfWrongGuesses += 1
-            }
-          }
-      // case 'CHECK_WIN_CONDITION':
-      //     return {
-      //       ...state,
-      //       numOfRightGuesses: state.numOfRightGuesses += 20
-      //     }    
-      //   }    
-
-      /* THIS STATEMENT BREAKS EVERYTHING. I'M NOT SURE WHY */    
-      // case 'CHECK_WIN_CONDITION':
-      //   if (state.targetWordArray.length === state.numOfRightGuesses) {
-      //     return {
-      //       ...state,
-      //       win: true
-      //     }
-      //   } 
-      //   else if (state.numOfWrongGuesses >=10) {
-      //     return {
-      //       ...state,
-      //       lose: true
-      //     }
-      //   }
-
-      break;
-      default:
-        return state;
+      } else {
+        return {
+          ...state,
+          numOfWrongGuesses: state.numOfWrongGuesses += 1
+        }
       }
-    }
-  
+
+    // case 'CHECK_WIN_CONDITION':
+    //     return {
+    //       ...state,
+    //       numOfRightGuesses: state.numOfRightGuesses += 20
+    //     }    
+    //   }    
+
+    /* THIS STATEMENT BREAKS EVERYTHING. I'M NOT SURE WHY */
+    // case 'CHECK_WIN_CONDITION':
+    //   if (state.targetWordArray.length === state.numOfRightGuesses) {
+    //     return {
+    //       ...state,
+    //       win: true
+    //     }
+    //   } 
+    //   else if (state.numOfWrongGuesses >=10) {
+    //     return {
+    //       ...state,
+    //       lose: true
+    //     }
+    //   }
+
+    // break;
+    default:
+      return state;
+  }
+}
+
 
 
 
