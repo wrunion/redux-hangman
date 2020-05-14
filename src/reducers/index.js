@@ -32,12 +32,12 @@ export default (state = initState, action) => {
               numOfWrongGuesses: state.numOfWrongGuesses += 1
             }
           }
-      case 'CHECK_WIN_CONDITION':
-        return {
-          ...state,
-          numOfRightGuesses: state.numOfRightGuesses += 20
-        }    
-
+      // case 'CHECK_WIN_CONDITION':
+      //     return {
+      //       ...state,
+      //       numOfRightGuesses: state.numOfRightGuesses += 20
+      //     }    
+      //   }    
 
       /* THIS STATEMENT BREAKS EVERYTHING. I'M NOT SURE WHY */    
       // case 'CHECK_WIN_CONDITION':

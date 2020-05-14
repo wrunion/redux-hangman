@@ -12,6 +12,7 @@ class LetterControl extends Component {
     const { letterAction, checkLetter, checkWinCondition } = this.props; 
     letterAction(letter);
     checkLetter(letter);
+    /* THIS DOESN'T WORK YET */
     checkWinCondition();
   }
 

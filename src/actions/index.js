@@ -15,9 +15,10 @@ export const checkLetter = (letter) => {
   };
 };
 
-export const checkWinCondition = () => {
+export const checkWinCondition = (num) => {
   return {
-    type: 'CHECK_WIN_CONDITION'
+    type: 'CHECK_WIN_CONDITION',
+    num: num
   }
 }
 
