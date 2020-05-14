@@ -1,12 +1,21 @@
 import React from 'react'
-import image3 from '../assets/hangman3.png';
-import image4 from '../assets/hangman4.png';
-import image5 from '../assets/hangman5.png';
-import image6 from '../assets/hangman6.png';
-import image7 from '../assets/hangman7.png';
-import image8 from '../assets/hangman8.png';
-import image9 from '../assets/hangman9.png';
-import image10 from '../assets/hangman10.png';
+import image0 from '../assets/image0.png'
+import image1 from '../assets/image1.png'
+import image2 from '../assets/image2.png'
+import image3 from '../assets/image3.png'
+import image4 from '../assets/image4.png'
+import image5 from '../assets/image5.png'
+import image6 from '../assets/image6.png'
+import image7 from '../assets/image7.png'
+
+// import image3 from '../assets/hangman3.png';
+// import image4 from '../assets/hangman4.png';
+// import image5 from '../assets/hangman5.png';
+// import image6 from '../assets/hangman6.png';
+// import image7 from '../assets/hangman7.png';
+// import image8 from '../assets/hangman8.png';
+// import image9 from '../assets/hangman9.png';
+// import image10 from '../assets/hangman10.png';
 import './HangmanImage.css';
 
 function HangmanImage(props) {
@@ -14,11 +23,23 @@ function HangmanImage(props) {
   if (number === 0) {
     return (
       <div className="HangmanImage">
-        <img src={image3} alt="" />
+        <img src={image0} alt="" />
       </div>
     );
   } else if (number) {
-    if (number === 3) {
+    if (number === 1) {
+      return (
+        <div className="HangmanImage">
+          <img src={image1} alt="" />
+        </div>
+      );
+    } else if (number === 2) {
+      return (
+        <div className="HangmanImage">
+          <img src={image2} alt="" />
+        </div>
+      );
+    } else if (number === 3) {
       return (
         <div className="HangmanImage">
           <img src={image3} alt="" />
@@ -42,36 +63,17 @@ function HangmanImage(props) {
           <img src={image6} alt="" />
         </div>
       );
-    } else if (number === 7) {
+    } else if (number >= 7) {
       return (
         <div className="HangmanImage">
           <img src={image7} alt="" />
-        </div>
-      );
-    } else if (number === 8) {
-      return (
-        <div className="HangmanImage">
-          <img src={image8} alt="" />
-        </div>
-      );
-    } else if (number === 9) {
-      return (
-        <div className="HangmanImage">
-          <img src={image9} alt="" />
-        </div>
-      );
-    } else if (number >= 10) {
-      return (
-        <div className="HangmanImage">
           <h2>You Lose!</h2>
-          <img src={image10} alt="" />
         </div>
       );
-    }
-     else {
+    } else {
       return (
         <div className="HangmanImage">
-          <img src={image3} alt="" />
+          <img src={image0} alt="" />
         </div>
       );
     }

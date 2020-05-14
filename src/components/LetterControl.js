@@ -20,7 +20,7 @@ class LetterControl extends Component {
   render() {
     return (
       <div>
-        <HangmanImage number={this.props.numOfWrongGuesses + 3} />
+        <HangmanImage number={this.props.numOfWrongGuesses} />
         <Form handleSubmit={this.handleLetterInput} />
         <LetterDisplay letterArray={this.props.letterArray} />
       </div>
