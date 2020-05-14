@@ -4,7 +4,7 @@ import './WordDisplay.css';
 function WordDisplay(props) {
   return (
     <div className="WordDisplay">
-      <h1>{props.displayArray}</h1> 
+      <h2>{props.displayArray}</h2> 
     </div>
   );
 }

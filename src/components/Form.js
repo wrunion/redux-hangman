@@ -7,6 +7,7 @@ function Form(props) {
     event.preventDefault();
     const letter = event.target.letter.value;
     props.handleSubmit(letter.toUpperCase());
+    document.getElementById('letter').value = '';
   }
 
   //Figure out how to reset/clear the form so that the next letter can be entered (w/out directly manipulating the DOM)
