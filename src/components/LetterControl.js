@@ -7,6 +7,7 @@ import LetterDisplay from './LetterDisplay';
 
 class LetterControl extends Component {
 
+  /* somewhere in here we need to verify that they're not submitting the same letter twice - or throw an error if they are */
   handleLetterInput = (letter) => {
     const { letterAction, checkLetter, checkWinCondition } = this.props; 
     letterAction(letter);

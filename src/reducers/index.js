@@ -6,8 +6,8 @@ const initState = {
   numOfWrongGuesses: 0,
   numOfRightGuesses: 0,
   letterArray: [],
-  win: 0,
-  lose: 0
+  win: false,
+  lose: false
 }
 
 export default (state = initState, action) => {
@@ -32,6 +32,29 @@ export default (state = initState, action) => {
               numOfWrongGuesses: state.numOfWrongGuesses += 1
             }
           }
+      case 'CHECK_WIN_CONDITION':
+        return {
+          ...state,
+          numOfRightGuesses: state.numOfRightGuesses += 20
+        }    
+
+
+      /* THIS STATEMENT BREAKS EVERYTHING. I'M NOT SURE WHY */    
+      // case 'CHECK_WIN_CONDITION':
+      //   if (state.targetWordArray.length === state.numOfRightGuesses) {
+      //     return {
+      //       ...state,
+      //       win: true
+      //     }
+      //   } 
+      //   else if (state.numOfWrongGuesses >=10) {
+      //     return {
+      //       ...state,
+      //       lose: true
+      //     }
+      //   }
+
+      break;
       default:
         return state;
       }
