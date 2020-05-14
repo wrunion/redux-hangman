@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8d2dba4f90d912d6e4cfcf146a7fc1b1",
+    "revision": "452a176f58a68d1e007c00a94371a961",
     "url": "/redux-hangman/index.html"
   },
   {
-    "revision": "99f45c57b093140cb341",
-    "url": "/redux-hangman/static/css/main.925d8618.chunk.css"
+    "revision": "9d61dbc844e25686f912",
+    "url": "/redux-hangman/static/css/main.453d4746.chunk.css"
   },
   {
     "revision": "00c68669b815789aed97",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/redux-hangman/static/js/2.d90383da.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "99f45c57b093140cb341",
-    "url": "/redux-hangman/static/js/main.e73afc49.chunk.js"
+    "revision": "9d61dbc844e25686f912",
+    "url": "/redux-hangman/static/js/main.d2f69802.chunk.js"
   },
   {
     "revision": "f781b267013ed950db7d",
