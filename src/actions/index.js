@@ -22,3 +22,9 @@ export const checkWinCondition = (num) => {
   }
 }
 
+export const renderWordDisplay = (letter) => {
+  return {
+    type: 'RENDER_WORD_DISPLAY', 
+    letter: letter
+  }
+}
