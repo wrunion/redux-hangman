@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import letterReducer from '../reducers';
 import { letterAction, checkLetter, checkWinCondition } from '../actions';
 import LetterDisplay from './LetterDisplay';
+import HangmanImage from './HangmanImage';
 
 class LetterControl extends Component {
 
@@ -19,6 +20,7 @@ class LetterControl extends Component {
   render() {
     return (
       <div>
+        <HangmanImage />
         <Form handleSubmit={this.handleLetterInput} />
         <LetterDisplay letterArray={this.props.letterArray} />
       </div>
