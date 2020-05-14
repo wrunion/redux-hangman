@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/redux-hangman/static/css/main.e1008442.chunk.css",
-    "main.js": "/redux-hangman/static/js/main.d084b354.chunk.js",
-    "main.js.map": "/redux-hangman/static/js/main.d084b354.chunk.js.map",
+    "main.css": "/redux-hangman/static/css/main.925d8618.chunk.css",
+    "main.js": "/redux-hangman/static/js/main.e73afc49.chunk.js",
+    "main.js.map": "/redux-hangman/static/js/main.e73afc49.chunk.js.map",
     "runtime-main.js": "/redux-hangman/static/js/runtime-main.6fd8fe6f.js",
     "runtime-main.js.map": "/redux-hangman/static/js/runtime-main.6fd8fe6f.js.map",
     "static/js/2.d90383da.chunk.js": "/redux-hangman/static/js/2.d90383da.chunk.js",
     "static/js/2.d90383da.chunk.js.map": "/redux-hangman/static/js/2.d90383da.chunk.js.map",
     "index.html": "/redux-hangman/index.html",
-    "precache-manifest.95cbf728d788dba03ea262ece6a3ab6e.js": "/redux-hangman/precache-manifest.95cbf728d788dba03ea262ece6a3ab6e.js",
+    "precache-manifest.0690026bf6aa53ceb7a3d10c854f77c3.js": "/redux-hangman/precache-manifest.0690026bf6aa53ceb7a3d10c854f77c3.js",
     "service-worker.js": "/redux-hangman/service-worker.js",
-    "static/css/main.e1008442.chunk.css.map": "/redux-hangman/static/css/main.e1008442.chunk.css.map",
+    "static/css/main.925d8618.chunk.css.map": "/redux-hangman/static/css/main.925d8618.chunk.css.map",
     "static/js/2.d90383da.chunk.js.LICENSE.txt": "/redux-hangman/static/js/2.d90383da.chunk.js.LICENSE.txt",
     "static/media/image0.png": "/redux-hangman/static/media/image0.bbde16d0.png",
     "static/media/image1.png": "/redux-hangman/static/media/image1.1b639a73.png",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.6fd8fe6f.js",
     "static/js/2.d90383da.chunk.js",
-    "static/css/main.e1008442.chunk.css",
-    "static/js/main.d084b354.chunk.js"
+    "static/css/main.925d8618.chunk.css",
+    "static/js/main.e73afc49.chunk.js"
   ]
 }
