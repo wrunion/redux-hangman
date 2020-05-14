@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import Form from './Form';
 import { connect } from 'react-redux';
-// import letterReducer from '../reducers';
-//Do we need to do this??? I don't think we should
-// import { store } from '../index.js';
+import letterReducer from '../reducers';
 import { letterAction, checkLetter } from '../actions';
 import LetterDisplay from './LetterDisplay';
 
@@ -19,22 +17,24 @@ class LetterControl extends Component {
     }
   }
 
-  checkWinCondition = () => {
-    if (this.state.numberOfCorrectGuesses === this.state.targetWordArray.length) {
-      this.setState({win: true});
-    }
-  }
+  // checkWinCondition = () => {
+  //   if (this.state.numberOfCorrectGuesses === this.state.targetWordArray.length) {
+  //     this.setState({win: true});
+  //   }
+  // }
 
   handleLetterInput = (letter) => {
-    console.log(letter); 
-    this.props.letterAction(letter);
+    const { letterAction, checkLetter } = this.props; 
+    letterAction(letter);
+    checkLetter(letter);
   }
 
   render() {
     return (
       <div>
         <Form handleSubmit={this.handleLetterInput} />
-        <LetterDisplay letter={this.props.letterArray} />
+        <LetterDisplay letterArray={this.props.letterArray} />
+        {/* {this.props.targetWordArray} */}
         {/* <div id="lettersGuessed">{this.props.letterArray}</div> */}
         {/* Create LetterDisplayDiv component  */}
       </div>
@@ -44,7 +44,8 @@ class LetterControl extends Component {
 
 const mapStateToProps = state => {
   return {
-    letterArray: state.letterArray
+    letterArray: state.letterArray,
+    targetWordArray: state.targetWordArray
   }
 }
 

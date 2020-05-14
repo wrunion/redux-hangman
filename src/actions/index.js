@@ -15,9 +15,9 @@ export const checkLetter = (letter) => {
   };
 };
 
-export const checkWinCondition = () => {
-  return {
-    type: 'CHECK_WIN_CONDITION'
-  }
-}
+// export const checkWinCondition = () => {
+//   return {
+//     type: 'CHECK_WIN_CONDITION'
+//   }
+// }
 

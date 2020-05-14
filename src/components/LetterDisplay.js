@@ -3,7 +3,7 @@ import React from 'react'
 function LetterDisplay(props) {
   return (
     <div className="LetterDisplay">
-      {props.letter}
+      {props.letterArray.join('')}
     </div>
   )
 }
