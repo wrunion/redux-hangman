@@ -2,31 +2,16 @@ import React, { Component } from 'react'
 import Form from './Form';
 import { connect } from 'react-redux';
 import letterReducer from '../reducers';
-import { letterAction, checkLetter } from '../actions';
+import { letterAction, checkLetter, checkWinCondition } from '../actions';
 import LetterDisplay from './LetterDisplay';
 
 class LetterControl extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     // numberOfWrongGuesses: 0,
-  //     // numberOfCorrectGuesses: 0,
-  //     // win: false,
-  //     // lose: false,
-  //     // currentGuess: ''
-  //   }
-  // }
-
-  // checkWinCondition = () => {
-  //   if (this.state.numberOfCorrectGuesses === this.state.targetWordArray.length) {
-  //     this.setState({win: true});
-  //   }
-  // }
 
   handleLetterInput = (letter) => {
     const { letterAction, checkLetter } = this.props; 
     letterAction(letter);
     checkLetter(letter);
+    checkWinCondition(letter);
   }
 
   render() {
@@ -43,9 +28,12 @@ const mapStateToProps = state => {
   return {
     letterArray: state.letterArray,
     targetWordArray: state.targetWordArray,
+    targetWord: state.targetWord,
     numOfWrongGuesses: state.numOfWrongGuesses,
-    numOfRightGuesses: state.numOfRightGuesses
+    numOfRightGuesses: state.numOfRightGuesses, 
+    win: state.win,
+    lose: state.lose
   }
 }
 
-export default connect(mapStateToProps, { letterAction, checkLetter })(LetterControl);
+export default connect(mapStateToProps, { letterAction, checkLetter, checkWinCondition })(LetterControl);

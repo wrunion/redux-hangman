@@ -5,9 +5,9 @@ const initState = {
   targetWordArray: ['B','A','N','A'],
   numOfWrongGuesses: 0,
   numOfRightGuesses: 0,
-  letterArray: []
-  // win: false,
-  // lose: false
+  letterArray: [],
+  win: 0,
+  lose: 0
 }
 
 export default (state = initState, action) => {
@@ -17,16 +17,11 @@ export default (state = initState, action) => {
           ...state,
           letterArray: [...state.letterArray, action.letter]
         }
-      // case 'CHECK_LETTER':
-      //   return {
-      //     ...state,
-      //     targetWordArray: [...state.targetWordArray, action.letter] 
-      //   }  
       case 'CHECK_LETTER':
-        /* Check the target word array for the guessed letter*/
+        /* Check if letter is in target word */
         const isLetterInWord = state.targetWord.includes(action.letter);
+        
         if (isLetterInWord) {
-          /* Add += to numOfWrongGuesses */
           return {
             ...state,
             numOfRightGuesses: state.numOfRightGuesses += 1,
@@ -37,16 +32,7 @@ export default (state = initState, action) => {
               numOfWrongGuesses: state.numOfWrongGuesses += 1
             }
           }
-      // case 'CHECK_WIN_CONDITION':
-      //   if (state.numOfRightGuesses === state.targetWordArray.length) {
-      //   return {
-      //     win: true
-      //   }  
-      // } else if (state.numOfWrongGuesses >= 10) {
-      //   return {
-      //     lose: true
-      //   }
-      // }
+      // break;
       default:
         return state;
       }
