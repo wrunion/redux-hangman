@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/redux-hangman/static/css/main.e1008442.chunk.css",
+    "main.js": "/redux-hangman/static/js/main.d084b354.chunk.js",
+    "main.js.map": "/redux-hangman/static/js/main.d084b354.chunk.js.map",
+    "runtime-main.js": "/redux-hangman/static/js/runtime-main.6fd8fe6f.js",
+    "runtime-main.js.map": "/redux-hangman/static/js/runtime-main.6fd8fe6f.js.map",
+    "static/js/2.d90383da.chunk.js": "/redux-hangman/static/js/2.d90383da.chunk.js",
+    "static/js/2.d90383da.chunk.js.map": "/redux-hangman/static/js/2.d90383da.chunk.js.map",
+    "index.html": "/redux-hangman/index.html",
+    "precache-manifest.95cbf728d788dba03ea262ece6a3ab6e.js": "/redux-hangman/precache-manifest.95cbf728d788dba03ea262ece6a3ab6e.js",
+    "service-worker.js": "/redux-hangman/service-worker.js",
+    "static/css/main.e1008442.chunk.css.map": "/redux-hangman/static/css/main.e1008442.chunk.css.map",
+    "static/js/2.d90383da.chunk.js.LICENSE.txt": "/redux-hangman/static/js/2.d90383da.chunk.js.LICENSE.txt",
+    "static/media/image0.png": "/redux-hangman/static/media/image0.bbde16d0.png",
+    "static/media/image1.png": "/redux-hangman/static/media/image1.1b639a73.png",
+    "static/media/image2.png": "/redux-hangman/static/media/image2.d9b64e23.png",
+    "static/media/image3.png": "/redux-hangman/static/media/image3.af97f420.png",
+    "static/media/image4.png": "/redux-hangman/static/media/image4.d30ae963.png",
+    "static/media/image5.png": "/redux-hangman/static/media/image5.1fac6aba.png",
+    "static/media/image6.png": "/redux-hangman/static/media/image6.0e6181dd.png",
+    "static/media/image7.png": "/redux-hangman/static/media/image7.bdcfcb3a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6fd8fe6f.js",
+    "static/js/2.d90383da.chunk.js",
+    "static/css/main.e1008442.chunk.css",
+    "static/js/main.d084b354.chunk.js"
+  ]
+}
