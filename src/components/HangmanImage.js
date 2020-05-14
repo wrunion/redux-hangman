@@ -11,7 +11,7 @@ import './HangmanImage.css';
 
 function HangmanImage(props) {
   const { number } = props;
-  if (!number) {
+  if (number === 0) {
     return (
       <div className="HangmanImage">
         <img src={image3} alt="" />
@@ -60,7 +60,7 @@ function HangmanImage(props) {
           <img src={image9} alt="" />
         </div>
       );
-    } else if (number === 10) {
+    } else if (number >= 10) {
       return (
         <div className="HangmanImage">
           <h2>You Lose!</h2>
