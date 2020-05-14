@@ -5,6 +5,7 @@ import letterReducer from '../reducers';
 import { letterAction, checkLetter, renderWordDisplay } from '../actions';
 import LetterDisplay from './LetterDisplay';
 import HangmanImage from './HangmanImage';
+import WordDisplay from './WordDisplay';
 
 class LetterControl extends Component {
 
@@ -21,6 +22,7 @@ class LetterControl extends Component {
     return (
       <div>
         <HangmanImage number={this.props.numOfWrongGuesses} />
+        <WordDisplay displayArray={this.props.displayArray} />
         <Form handleSubmit={this.handleLetterInput} />
         <LetterDisplay letterArray={this.props.letterArray} />
       </div>
