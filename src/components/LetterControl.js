@@ -5,6 +5,7 @@ import letterReducer from '../reducers';
 //Do we need to do this??? I don't think we should
 // import { store } from '../index.js';
 import { letterAction } from '../actions';
+import LetterDisplay from './LetterDisplay';
 
 class LetterControl extends Component {
   constructor(props) {
@@ -36,7 +37,8 @@ class LetterControl extends Component {
     return (
       <div>
         <Form handleSubmit={this.handleLetterInput} />
-        <div id="lettersGuessed">{this.props.letterArray}</div>
+        <LetterDisplay letter={this.props.letterArray} />
+        {/* <div id="lettersGuessed">{this.props.letterArray}</div> */}
         {/* Create LetterDisplayDiv component  */}
       </div>
     );
