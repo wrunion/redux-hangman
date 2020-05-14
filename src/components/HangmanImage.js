@@ -24,15 +24,58 @@ function HangmanImage(props) {
           <img src={image3} alt="" />
         </div>
       );
-    } 
+    } else if (number === 4) {
+      return (
+        <div className="HangmanImage">
+          <img src={image4} alt="" />
+        </div>
+      );
+    } else if (number === 5) {
+      return (
+        <div className="HangmanImage">
+          <img src={image5} alt="" />
+        </div>
+      );
+    } else if (number === 6) {
+      return (
+        <div className="HangmanImage">
+          <img src={image6} alt="" />
+        </div>
+      );
+    } else if (number === 7) {
+      return (
+        <div className="HangmanImage">
+          <img src={image7} alt="" />
+        </div>
+      );
+    } else if (number === 8) {
+      return (
+        <div className="HangmanImage">
+          <img src={image8} alt="" />
+        </div>
+      );
+    } else if (number === 9) {
+      return (
+        <div className="HangmanImage">
+          <img src={image9} alt="" />
+        </div>
+      );
+    } else if (number === 10) {
+      return (
+        <div className="HangmanImage">
+          <h2>You Lose!</h2>
+          <img src={image10} alt="" />
+        </div>
+      );
+    }
      else {
-    return (
-      <div className="HangmanImage">
-        <img src={image3} alt="" />
-      </div>
-    )
+      return (
+        <div className="HangmanImage">
+          <img src={image3} alt="" />
+        </div>
+      );
+    }
   }
-}
 }
 
 export default HangmanImage;
