@@ -48,30 +48,6 @@ export default (state = initState, action) => {
                 }
               })
             }
-          // if (state.displayArray === null) {
-          //   return {
-          //     ...state, 
-          //     displayArray: state.targetWordArray.map(e => {
-          //       if (e === letter) {
-          //         return letter;
-          //       } else {
-          //         return "_";
-          //       };
-          //     })}
-          //   } else {
-          //     return {
-          //       ...state,
-          //       displayArray: state.displayArray.map(e => {
-          //         if ((e === letter) && (state.targetWord.includes(e))) {
-          //           return letter;
-          //         } else if (testRegex.test(e) === true) {
-          //           return e;
-          //         } else {
-          //           return "_"
-          //         }
-          //       })
-          //     };
-          //   }
           // case 'CHECK_WIN_CONDITION':
       //     return {
       //       ...state,
