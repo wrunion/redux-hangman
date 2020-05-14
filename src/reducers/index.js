@@ -32,22 +32,13 @@ export default (state = initState, action) => {
               numOfWrongGuesses: state.numOfWrongGuesses += 1
             }
           }
-      // break;
       default:
         return state;
       }
     }
   
 
-// export default (state = initState, action) => {
-//   if (action.type === 'ADD_LETTER') {
-//     return {
-//       letterArray: [...state.letterArray, action.letter]
-//     }
-//   } else {
-//     return state;
-//   }
-// }
+
 
 // export default combineReducers({
 //   guessedLetterArray: guessedLetterArrayReducer,  

@@ -8,10 +8,10 @@ import LetterDisplay from './LetterDisplay';
 class LetterControl extends Component {
 
   handleLetterInput = (letter) => {
-    const { letterAction, checkLetter } = this.props; 
+    const { letterAction, checkLetter, checkWinCondition } = this.props; 
     letterAction(letter);
     checkLetter(letter);
-    checkWinCondition(letter);
+    checkWinCondition();
   }
 
   render() {
