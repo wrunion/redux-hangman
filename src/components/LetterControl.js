@@ -6,7 +6,6 @@ import letterReducer from '../reducers';
 // import { store } from '../index.js';
 import { letterAction } from '../actions';
 
-
 class LetterControl extends Component {
   constructor(props) {
     super(props);
