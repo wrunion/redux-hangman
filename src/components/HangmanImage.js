@@ -18,20 +18,21 @@ function HangmanImage(props) {
       </div>
     );
   } else if (number) {
-    return (
-      <div className="HangmanImage">
-        { number === 4 ? <img src={image3} alt="" /> : 
-        // number === 5 ? <img src={image3} alt="" />
-        null}
-      </div>
-    )
-  } else {
+    if (number === 3) {
+      return (
+        <div className="HangmanImage">
+          <img src={image3} alt="" />
+        </div>
+      );
+    } 
+     else {
     return (
       <div className="HangmanImage">
         <img src={image3} alt="" />
       </div>
     )
   }
+}
 }
 
 export default HangmanImage;
