@@ -1,22 +1,19 @@
 import React, { Component } from 'react'
 import Form from './Form';
 import { connect } from 'react-redux';
-import letterReducer from '../reducers';
+// import letterReducer from '../reducers';
 //Do we need to do this??? I don't think we should
 // import { store } from '../index.js';
-import { letterAction } from '../actions';
+import { letterAction, checkLetter } from '../actions';
 import LetterDisplay from './LetterDisplay';
 
 class LetterControl extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      targetWord: 'BANANA',
-      targetWordArray: ['B','A','N','A'],
-      // lettersGuessedArray: [] //REPLACED BY REDUX STATE
-      numberOfWrongGuesses: 0,
-      numberOfCorrectGuesses: 0,
-      win: false,
+      // numberOfWrongGuesses: 0,
+      // numberOfCorrectGuesses: 0,
+      // win: false,
       // lose: false,
       // currentGuess: ''
     }
@@ -51,4 +48,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { letterAction })(LetterControl);
+export default connect(mapStateToProps, { letterAction, checkLetter })(LetterControl);

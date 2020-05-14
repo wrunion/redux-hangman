@@ -9,13 +9,14 @@ function Form(props) {
     props.handleSubmit(letter.toUpperCase());
   }
 
+  //Figure out how to reset/clear the form so that the next letter can be entered (w/out directly manipulating the DOM)
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
         <p><input type="text" 
           id='letter'
           placeholder='Submit a Letter'
-          maxlength="1"
+          maxLength="1"
           required
         /></p>
         <button type='submit'>Submit A letter</button>

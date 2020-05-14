@@ -6,10 +6,9 @@ import { createStore } from 'redux';
 import letterReducer from './reducers';
 import { Provider } from 'react-redux';
 
-export const store = createStore(letterReducer);
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={createStore(letterReducer)}>
     <App />
   </Provider>,
   document.getElementById('root')
