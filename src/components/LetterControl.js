@@ -6,16 +6,16 @@ import { letterAction, checkLetter } from '../actions';
 import LetterDisplay from './LetterDisplay';
 
 class LetterControl extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // numberOfWrongGuesses: 0,
-      // numberOfCorrectGuesses: 0,
-      // win: false,
-      // lose: false,
-      // currentGuess: ''
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     // numberOfWrongGuesses: 0,
+  //     // numberOfCorrectGuesses: 0,
+  //     // win: false,
+  //     // lose: false,
+  //     // currentGuess: ''
+  //   }
+  // }
 
   // checkWinCondition = () => {
   //   if (this.state.numberOfCorrectGuesses === this.state.targetWordArray.length) {
@@ -34,9 +34,6 @@ class LetterControl extends Component {
       <div>
         <Form handleSubmit={this.handleLetterInput} />
         <LetterDisplay letterArray={this.props.letterArray} />
-        {/* {this.props.targetWordArray} */}
-        {/* <div id="lettersGuessed">{this.props.letterArray}</div> */}
-        {/* Create LetterDisplayDiv component  */}
       </div>
     );
   }
@@ -45,7 +42,9 @@ class LetterControl extends Component {
 const mapStateToProps = state => {
   return {
     letterArray: state.letterArray,
-    targetWordArray: state.targetWordArray
+    targetWordArray: state.targetWordArray,
+    numOfWrongGuesses: state.numOfWrongGuesses,
+    numOfRightGuesses: state.numOfRightGuesses
   }
 }
 
